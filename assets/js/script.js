@@ -1,4 +1,3 @@
-
 // The order of the questions matches the order of the answers
 // The number of questions must match the number of answers
 var questions = [
@@ -11,17 +10,27 @@ var answers = [
     ["1", "3", "5", "7"]
 ];
 
-renderQuestions(0);
+renderQuestionsAndAnswers(0);
 
-
-renderQuestions(1);
-
-
-
-function renderQuestions(index)
+function renderQuestionsAndAnswers(index)
 {
     var questionDisplay = document.querySelector('#question');
     var answerDisplay = document.querySelector('#answers');
 
     questionDisplay.textContent = questions[index];
+    answerDisplay.textContent = answers[index];
+
+    // Clear answerDisplay element 
+    answerDisplay.innerHTML = "";
+ 
+    // Render a new li for each answer
+    for (var i = 0; i < answers[index].length; i++) {
+        var answer = answers[index][i];
+
+        var li = document.createElement("li");
+        li.textContent = answer;
+        // li.setAttribute("data-index", i);
+
+        answerDisplay.appendChild(li);
+    }
 }

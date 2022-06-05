@@ -39,10 +39,10 @@ function renderQuestionsAndAnswers(index)
         li.addEventListener("click", function(event){
             var selectedAnswer = event.target;
             if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
-                window.alert("correct");
+                document.querySelector(".card-footer").textContent = "correct";
             }
             else {
-                window.alert("incorrect");
+                document.querySelector(".card-footer").textContent = "incorrect";
             }
 
         });

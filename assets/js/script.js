@@ -13,7 +13,9 @@ var quiz = {
     ]
 };
 
-renderQuestionsAndAnswers(0);
+var questionNumber = 0;
+
+renderQuestionsAndAnswers(questionNumber);
 
 function renderQuestionsAndAnswers(index)
 {
@@ -40,6 +42,8 @@ function renderQuestionsAndAnswers(index)
             var selectedAnswer = event.target;
             if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
                 document.querySelector(".card-footer").textContent = "correct";
+                questionNumber++
+                renderQuestionsAndAnswers(questionNumber);
             }
             else {
                 document.querySelector(".card-footer").textContent = "incorrect";

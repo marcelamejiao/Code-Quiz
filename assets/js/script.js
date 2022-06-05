@@ -42,6 +42,12 @@ function renderQuestionsAndAnswers(index)
             var selectedAnswer = event.target;
             if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
                 document.querySelector(".card-footer").textContent = "correct";
+                if (questionNumber === quiz.questions.length - 1){
+                    document.querySelector(".card").style.display = "none";
+                    document.querySelector("#final-screen").style.visibility = "visible";
+                    
+                    return;
+                }
                 questionNumber++
                 renderQuestionsAndAnswers(questionNumber);
             }

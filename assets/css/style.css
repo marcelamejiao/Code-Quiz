@@ -80,3 +80,7 @@ li {
   display: block;
   clear: both;
 }
+
+#final-screen{
+  visibility: hidden;
+}

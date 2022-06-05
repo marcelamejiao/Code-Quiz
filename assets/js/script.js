@@ -4,6 +4,11 @@ var quiz = {
             questionHeading: "Test question 1?",
             availableAnswers: ["2", '6', '15', '105'],
             correctAnswer: "15"
+        },
+        {
+            questionHeading: "Test question 2?",
+            availableAnswers: ["25", '65', '155', '1055'],
+            correctAnswer: "25"
         }
     ]
 };
@@ -14,15 +19,16 @@ function renderQuestionsAndAnswers(index)
 {
     var questionDisplay = document.querySelector('#question');
     var answerDisplay = document.querySelector('#answers');
+    var currentQuestion = quiz.questions[index];
 
-    questionDisplay.textContent = quiz.questions[index].questionHeading;
+    questionDisplay.textContent = currentQuestion.questionHeading;
 
     // Clear answerDisplay element 
     answerDisplay.innerHTML = "";
  
     // Render a new li for each answer
-    for (var i = 0; i < quiz.questions[index].availableAnswers.length; i++) {
-        var answer = quiz.questions[index].availableAnswers[i];
+    for (var i = 0; i < currentQuestion.availableAnswers.length; i++) {
+        var answer = currentQuestion.availableAnswers[i];
 
         var li = document.createElement("li");
         li.textContent = answer;
@@ -30,10 +36,15 @@ function renderQuestionsAndAnswers(index)
 
         answerDisplay.appendChild(li);
 
-        // answer.addEventListener("click", function(){
-        //     if 
+        li.addEventListener("click", function(event){
+            var selectedAnswer = event.target;
+            if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
+                window.alert("correct");
+            }
+            else {
+                window.alert("incorrect");
+            }
 
-        // })
+        });
     }
 }
-

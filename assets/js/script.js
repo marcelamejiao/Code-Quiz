@@ -58,3 +58,10 @@ function renderQuestionsAndAnswers(index)
         });
     }
 }
+
+var finalScore = 100;
+
+document.querySelector("button").addEventListener("click", function(){
+    localStorage.setItem("finalScore", finalScore)
+    localStorage.setItem("initials", JSON.stringify(document.querySelector("input").value))
+});

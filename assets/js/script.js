@@ -38,19 +38,26 @@ function renderQuestionsAndAnswers(index)
 
         answerDisplay.appendChild(li);
 
+        // When the user clicks an answer...
         li.addEventListener("click", function(event){
             var selectedAnswer = event.target;
+            // ... if the answer was correct ...
             if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
+                // ... shows it is correct ...
                 document.querySelector("#quiz .card-footer").textContent = "correct";
+                // ... if it is the last question ...
                 if (questionNumber === quiz.questions.length - 1){
+                    // shows the final screen.
                     document.querySelector("#quiz").style.display = "none";
                     document.querySelector("#final-screen").style.display = "block";
                     
                     return;
                 }
-                questionNumber++
+                // show the next question.
+                questionNumber++;
                 renderQuestionsAndAnswers(questionNumber);
             }
+            // shows it is incorrect
             else {
                 document.querySelector("#quiz .card-footer").textContent = "incorrect";
             }
@@ -59,16 +66,19 @@ function renderQuestionsAndAnswers(index)
     }
 }
 
+// Get the highscores from local storage and convert to JS
 function getHighScores () {
     highScores = JSON.parse(localStorage.getItem("highScores"));
 }
 
+// Get the high scores array and set it in local storage as text
 function setHighScores() {
     localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
 var finalScore = 100;
 
+// When user press Submit then store the highscores
 document.querySelector("#finalButton").addEventListener("click", function(){
     highScores.push({
         initials: document.querySelector("input").value,
@@ -79,6 +89,7 @@ document.querySelector("#finalButton").addEventListener("click", function(){
 console.log(highScores);
 });
 
+// When user press start show questions
 document.querySelector("#startButton").addEventListener("click", function(){
     document.querySelector("#quiz").style.display = "block";
     document.querySelector("#start").style.display = "none";

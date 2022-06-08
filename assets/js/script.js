@@ -131,6 +131,12 @@ document.querySelector("#clear-button").addEventListener("click", function(){
     renderHighscores();
 });
 
+// When user press Go back it shows the start section
+document.querySelector("#go-back").addEventListener("click", function(){
+    document.querySelector("#highscores").style.display = "none";
+    document.querySelector("#start").style.display = "block";
+});
+
 function initialise () {
     getHighScores();
 

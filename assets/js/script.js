@@ -34,17 +34,17 @@ function renderQuestionsAndAnswers(index)
 
         var li = document.createElement("li");
         li.textContent = answer;
-        // li.setAttribute("data-index", i);
+
 
         answerDisplay.appendChild(li);
 
         li.addEventListener("click", function(event){
             var selectedAnswer = event.target;
             if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
-                document.querySelector(".card-footer").textContent = "correct";
+                document.querySelector("#quiz .card-footer").textContent = "correct";
                 if (questionNumber === quiz.questions.length - 1){
-                    document.querySelector(".card").style.display = "none";
-                    document.querySelector("#final-screen").style.visibility = "visible";
+                    document.querySelector("#quiz").style.display = "none";
+                    document.querySelector("#final-screen").style.display = "block";
                     
                     return;
                 }
@@ -52,7 +52,7 @@ function renderQuestionsAndAnswers(index)
                 renderQuestionsAndAnswers(questionNumber);
             }
             else {
-                document.querySelector(".card-footer").textContent = "incorrect";
+                document.querySelector("#quiz .card-footer").textContent = "incorrect";
             }
 
         });
@@ -69,7 +69,7 @@ function setHighScores() {
 
 var finalScore = 100;
 
-document.querySelector("button").addEventListener("click", function(){
+document.querySelector("#finalButton").addEventListener("click", function(){
     highScores.push({
         initials: document.querySelector("input").value,
         finalScore: finalScore
@@ -77,6 +77,11 @@ document.querySelector("button").addEventListener("click", function(){
 
     setHighScores();
 console.log(highScores);
+});
+
+document.querySelector("#startButton").addEventListener("click", function(){
+    document.querySelector("#quiz").style.display = "block";
+    document.querySelector("#start").style.display = "none";
 });
 
 function initialise () {

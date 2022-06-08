@@ -12,7 +12,7 @@
       <header>
         <h1>Code Quiz</h1>
       </header>
-      <section class="card">
+      <section class="card" id="quiz">
         <header class="card-header">
           <h2 id="question">Question</h2>
         </header>
@@ -27,7 +27,19 @@
         <div class="card-body">
           <p>Your final score is 24.</p>
           <input type="Enter Initials" placeholder="MO">
-          <button>Submit</button>
+          <button id="finalButton">Submit</button>
+        </div>
+      </section>
+      <section class="card" id="start">
+        <header class="card-header">
+          <h2>Welcome to the Quiz!</h2>
+        </header>
+        <div class="card-body">
+          <p>Try to answer the following code-related questions within the time limit.
+            Keep in mind that incorrect answers will penalize your score/time by 
+            ten seconds!
+          </p>
+          <button id="startButton">Start Quiz</button>
         </div>
       </section>
     </main>

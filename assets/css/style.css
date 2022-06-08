@@ -82,5 +82,9 @@ li {
 }
 
 #final-screen{
-  visibility: hidden;
+  display: none;
+}
+ 
+#quiz{
+  display: none;
 }

@@ -60,6 +60,9 @@ function renderQuestionsAndAnswers(index)
             // shows it is incorrect
             else {
                 document.querySelector("#quiz .card-footer").textContent = "incorrect";
+
+                // Decrease score when answer is wrong
+                finalScore = finalScore - 10;
             }
 
         });
@@ -102,11 +105,13 @@ function renderHighscores(){
 // Render time/score 
 function renderScore(){
     var timer = document.querySelector("#timer");
-    
     timer.textContent = finalScore;
+
+    var displayFinalScore = document.querySelector("#final-score");
+    displayFinalScore.textContent = finalScore;
 }
 
-var finalScore = 10;
+var finalScore = 90;
 
 // When user press Submit then store the highscores
 document.querySelector("#finalButton").addEventListener("click", function(){
@@ -130,8 +135,13 @@ document.querySelector("#startButton").addEventListener("click", function(){
 
         renderScore();
 
-        if (finalScore===0){
-            clearInterval(timerInterval)
+        if (finalScore<=0){
+            clearInterval(timerInterval);
+
+            if (finalScore < 0){
+                finalScore = 0;
+                renderScore();
+            }
 
             document.querySelector("#quiz").style.display = "none";
             document.querySelector("#final-screen").style.display = "block";

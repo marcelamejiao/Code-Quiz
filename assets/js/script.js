@@ -46,6 +46,12 @@ function renderQuestionsAndAnswers(index)
             if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
                 // ... shows it is correct ...
                 document.querySelector("#quiz .card-footer").textContent = "correct";
+                var correctAnswerInterval = setInterval(function () {
+                    document.querySelector("#quiz .card-footer").textContent = "";
+
+                    clearInterval(correctAnswerInterval);
+                }, 1000);
+
                 // ... if it is the last question ...
                 if (questionNumber === quiz.questions.length - 1){
                     // shows the final screen.

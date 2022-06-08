@@ -13,9 +13,9 @@ var quiz = {
     ]
 };
 
-var questionNumber = 0;
+var highScores = [];
 
-renderQuestionsAndAnswers(questionNumber);
+var questionNumber = 0;
 
 function renderQuestionsAndAnswers(index)
 {
@@ -59,9 +59,30 @@ function renderQuestionsAndAnswers(index)
     }
 }
 
+function getHighScores () {
+    highScores = JSON.parse(localStorage.getItem("highScores"));
+}
+
+function setHighScores() {
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+}
+
 var finalScore = 100;
 
 document.querySelector("button").addEventListener("click", function(){
-    localStorage.setItem("finalScore", finalScore)
-    localStorage.setItem("initials", JSON.stringify(document.querySelector("input").value))
+    highScores.push({
+        initials: document.querySelector("input").value,
+        finalScore: finalScore
+    });
+
+    setHighScores();
+console.log(highScores);
 });
+
+function initialise () {
+    getHighScores();
+
+    renderQuestionsAndAnswers(questionNumber);
+}
+
+initialise();

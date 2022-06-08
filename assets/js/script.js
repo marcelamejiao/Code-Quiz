@@ -125,9 +125,15 @@ function renderScore(){
 
 // When user press Submit then store the highscores
 document.querySelector("#finalButton").addEventListener("click", function(){
+    // Add the highscore to our list
     highScores.push({
         initials: document.querySelector("input").value,
         finalScore: finalScore
+    });
+
+    // Sort the highscores by their finalScore value
+    highScores.sort(function (highScoreA, highScoreB) {
+        return highScoreB.finalScore - highScoreA.finalScore;
     });
 
     setHighScores();

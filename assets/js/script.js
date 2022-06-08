@@ -14,8 +14,9 @@ var quiz = {
 };
 
 var highScores = [];
-
 var questionNumber = 0;
+var finalScore;
+var timerInterval;
 
 function renderQuestionsAndAnswers(index)
 {
@@ -50,6 +51,9 @@ function renderQuestionsAndAnswers(index)
                     // shows the final screen.
                     document.querySelector("#quiz").style.display = "none";
                     document.querySelector("#final-screen").style.display = "block";
+
+                    // Stop timer
+                    clearInterval(timerInterval);
                     
                     return;
                 }
@@ -111,8 +115,6 @@ function renderScore(){
     displayFinalScore.textContent = finalScore;
 }
 
-var finalScore = 90;
-
 // When user press Submit then store the highscores
 document.querySelector("#finalButton").addEventListener("click", function(){
     highScores.push({
@@ -121,6 +123,11 @@ document.querySelector("#finalButton").addEventListener("click", function(){
     });
 
     setHighScores();
+
+    document.querySelector("#final-screen").style.display = "none";
+    document.querySelector("#highscores").style.display = "block";
+
+    renderHighscores();
 });
 
 // When user press start show questions
@@ -128,9 +135,10 @@ document.querySelector("#startButton").addEventListener("click", function(){
     document.querySelector("#quiz").style.display = "block";
     document.querySelector("#start").style.display = "none";
 
+    finalScore = 90;
     renderScore();
 
-    var timerInterval = setInterval(function(){
+    timerInterval = setInterval(function(){
         finalScore--;
 
         renderScore();
@@ -146,7 +154,7 @@ document.querySelector("#startButton").addEventListener("click", function(){
             document.querySelector("#quiz").style.display = "none";
             document.querySelector("#final-screen").style.display = "block";
         }
-    },1000)
+    },1000);
 });
 
 // When user press View highscores then show highscores list
@@ -166,6 +174,12 @@ document.querySelector("#clear-button").addEventListener("click", function(){
 
 // When user press Go back it shows the start section
 document.querySelector("#go-back").addEventListener("click", function(){
+    questionNumber = 0;
+    finalScore = "";
+    renderScore();
+
+    renderQuestionsAndAnswers(questionNumber);
+
     document.querySelector("#highscores").style.display = "none";
     document.querySelector("#start").style.display = "block";
 });

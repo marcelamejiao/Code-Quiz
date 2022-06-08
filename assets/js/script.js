@@ -99,7 +99,14 @@ function renderHighscores(){
     
 }
 
-var finalScore = 100;
+// Render time/score 
+function renderScore(){
+    var timer = document.querySelector("#timer");
+    
+    timer.textContent = finalScore;
+}
+
+var finalScore = 10;
 
 // When user press Submit then store the highscores
 document.querySelector("#finalButton").addEventListener("click", function(){
@@ -115,6 +122,21 @@ document.querySelector("#finalButton").addEventListener("click", function(){
 document.querySelector("#startButton").addEventListener("click", function(){
     document.querySelector("#quiz").style.display = "block";
     document.querySelector("#start").style.display = "none";
+
+    renderScore();
+
+    var timerInterval = setInterval(function(){
+        finalScore--;
+
+        renderScore();
+
+        if (finalScore===0){
+            clearInterval(timerInterval)
+
+            document.querySelector("#quiz").style.display = "none";
+            document.querySelector("#final-screen").style.display = "block";
+        }
+    },1000)
 });
 
 // When user press View highscores then show highscores list

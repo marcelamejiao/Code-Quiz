@@ -88,3 +88,7 @@ li {
 #quiz{
   display: none;
 }
+
+#highscores{
+  display: none;
+}

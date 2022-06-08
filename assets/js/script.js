@@ -46,6 +46,8 @@ function renderQuestionsAndAnswers(index)
             if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
                 // ... shows it is correct ...
                 document.querySelector("#quiz .card-footer").textContent = "correct";
+
+                // ... hide the correct message after 1 second
                 var correctAnswerInterval = setInterval(function () {
                     document.querySelector("#quiz .card-footer").textContent = "";
 

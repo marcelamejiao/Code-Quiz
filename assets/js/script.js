@@ -86,6 +86,7 @@ function clearHighscores () {
 // Update the highscores list
 function renderHighscores(){
     var list = document.querySelector("#highscores .card-body ol");
+    list.innerHTML = "";
 
     for (var i = 0; i<highScores.length; i++){
         var currentHighscore = highScores[i];
@@ -120,8 +121,13 @@ document.querySelector("#startButton").addEventListener("click", function(){
 document.querySelector("#highscoresButton").addEventListener("click", function(){
     document.querySelector("#highscores").style.display = "block";
     document.querySelector("#start").style.display = "none";
-    // document.querySelector("#quiz").style.display = "none";
 
+    renderHighscores();
+});
+
+// When user press Clear highscores then empty the list
+document.querySelector("#clear-button").addEventListener("click", function(){
+    clearHighscores();
     renderHighscores();
 });
 

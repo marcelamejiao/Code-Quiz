@@ -76,6 +76,28 @@ function setHighScores() {
     localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
+// Clear the highscores
+function clearHighscores () {
+    highScores = [];
+
+    setHighScores();
+}
+
+// Update the highscores list
+function renderHighscores(){
+    var list = document.querySelector("#highscores .card-body ol");
+
+    for (var i = 0; i<highScores.length; i++){
+        var currentHighscore = highScores[i];
+
+        var li = document.createElement("li");
+        li.textContent = currentHighscore.initials+ " - " + currentHighscore.finalScore;
+        
+        list.appendChild(li);
+    }
+    
+}
+
 var finalScore = 100;
 
 // When user press Submit then store the highscores
@@ -86,7 +108,6 @@ document.querySelector("#finalButton").addEventListener("click", function(){
     });
 
     setHighScores();
-console.log(highScores);
 });
 
 // When user press start show questions
@@ -100,6 +121,8 @@ document.querySelector("#highscoresButton").addEventListener("click", function()
     document.querySelector("#highscores").style.display = "block";
     document.querySelector("#start").style.display = "none";
     // document.querySelector("#quiz").style.display = "none";
+
+    renderHighscores();
 });
 
 function initialise () {

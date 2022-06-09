@@ -1,15 +1,30 @@
 var quiz = {
     questions: [
         {
-            questionHeading: "Test question 1?",
-            availableAnswers: ["2", '6', '15', '105'],
-            correctAnswer: "15"
+            questionHeading: "Commonly used data types DO NOT include",
+            availableAnswers: ["strings", 'booleans', 'alerts', 'numbers'],
+            correctAnswer: "alerts"
         },
         {
-            questionHeading: "Test question 2?",
-            availableAnswers: ["25", '65', '155', '1055'],
-            correctAnswer: "25"
-        }
+            questionHeading: "The condition on an if / else statement is enclosed within ___.?",
+            availableAnswers: ["quotes", 'curly brackets', 'parentheses', 'square brackets'],
+            correctAnswer: "parentheses"
+        },
+        {
+            questionHeading: "Arrays in JavaScript can be used to store ___.?",
+            availableAnswers: ["numbers and strings", 'other arrays', 'booleans', 'all of the above'],
+            correctAnswer: "all of the above"
+        },
+        {
+            questionHeading: "String values must be enclosed within ___ when being assigned to variables.",
+            availableAnswers: ["commas", 'curly brackets', 'quotes', 'parentheses'],
+            correctAnswer: "quotes"
+        },
+        {
+            questionHeading: "A very useful tool used during development and debugging for printing content to the debugger is?",
+            availableAnswers: ["JavaScript", 'terminal/bash', 'for loops', 'console.log'],
+            correctAnswer: "console.log"
+        },
     ]
 };
 

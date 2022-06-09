@@ -210,6 +210,7 @@ document.querySelector("#highscoresButton").addEventListener("click", function()
     document.querySelector("#highscores").style.display = "block";
     document.querySelector("#start").style.display = "none";
     document.querySelector("#final-screen").style.display = "none";
+    document.querySelector("#quiz").style.display = "none";
 
     renderHighscores();
 });

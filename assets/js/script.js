@@ -61,30 +61,8 @@ function renderQuestionsAndAnswers(index)
             if (selectedAnswer.textContent === currentQuestion.correctAnswer) {
                 // ... shows it is correct ...
                 document.querySelector("#quiz .card-footer").textContent = "correct";
-
-                // ... hide the correct message after 1 second
-                var correctAnswerInterval = setInterval(function () {
-                    document.querySelector("#quiz .card-footer").textContent = "";
-
-                    clearInterval(correctAnswerInterval);
-                }, 1000);
-
-                // ... if it is the last question ...
-                if (questionNumber === quiz.questions.length - 1){
-                    // shows the final screen.
-                    document.querySelector("#quiz").style.display = "none";
-                    document.querySelector("#final-screen").style.display = "block";
-
-                    // Stop timer
-                    clearInterval(timerInterval);
-                    
-                    return;
-                }
-                // show the next question.
-                questionNumber++;
-                renderQuestionsAndAnswers(questionNumber);
             }
-            // shows it is incorrect
+            // ...otherwise shows it is incorrect.
             else {
                 document.querySelector("#quiz .card-footer").textContent = "incorrect";
 
@@ -92,6 +70,28 @@ function renderQuestionsAndAnswers(index)
                 finalScore = finalScore - 10;
             }
 
+            // Hide the message after 1 second
+            var correctAnswerInterval = setInterval(function () {
+                document.querySelector("#quiz .card-footer").textContent = "";
+
+                clearInterval(correctAnswerInterval);
+            }, 1000);
+
+            // If it is the last question ...
+            if (questionNumber === quiz.questions.length - 1){
+                // shows the final screen.
+                document.querySelector("#quiz").style.display = "none";
+                document.querySelector("#final-screen").style.display = "block";
+
+                // Stop timer
+                clearInterval(timerInterval);
+                
+                return;
+            }
+
+            // otherwise show the next question.
+            questionNumber++;
+            renderQuestionsAndAnswers(questionNumber);
         });
     }
 }
@@ -172,6 +172,10 @@ document.querySelector("#finalButton").addEventListener("click", function(){
 
     setHighScores();
 
+    // Clear the score once the player has finished the quiz.
+    finalScore = 0;
+    renderScore();
+
     document.querySelector("#final-screen").style.display = "none";
     document.querySelector("#highscores").style.display = "block";
 
@@ -207,6 +211,12 @@ document.querySelector("#startButton").addEventListener("click", function(){
 
 // When user press View highscores then show highscores list
 document.querySelector("#highscoresButton").addEventListener("click", function(){
+    // The user must finish the quiz before seeing highscores
+    if (finalScore > 0){
+        window.alert("Please finish the Quiz to see the highscores.");
+        return;
+    }
+
     document.querySelector("#highscores").style.display = "block";
     document.querySelector("#start").style.display = "none";
     document.querySelector("#final-screen").style.display = "none";

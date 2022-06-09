@@ -132,7 +132,14 @@ function renderHighscores(){
 // Render time/score 
 function renderScore(){
     var timer = document.querySelector("#timer");
-    timer.textContent = finalScore;
+
+    if (finalScore === 0) {
+        timer.classList.remove('filled');
+        timer.textContent = '';
+    } else {
+        timer.classList.add('filled');
+        timer.textContent = finalScore;
+    }
 
     var displayFinalScore = document.querySelector("#final-score");
     displayFinalScore.textContent = finalScore;
@@ -140,6 +147,13 @@ function renderScore(){
 
 // When user press Submit then store the highscores
 document.querySelector("#finalButton").addEventListener("click", function(){
+    var initials = document.querySelector("input").value;
+
+    if (! initials) {
+        window.alert('Please fill in initials.');
+        return;
+    }
+
     // Add the highscore to our list
     highScores.push({
         initials: document.querySelector("input").value,
@@ -204,7 +218,7 @@ document.querySelector("#clear-button").addEventListener("click", function(){
 // When user press Go back it shows the start section
 document.querySelector("#go-back").addEventListener("click", function(){
     questionNumber = 0;
-    finalScore = "";
+    finalScore = 0;
     renderScore();
 
     renderQuestionsAndAnswers(questionNumber);

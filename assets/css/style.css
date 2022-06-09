@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 html,
@@ -43,12 +44,18 @@ header {
 }
 
 li {
-  background-color: blueviolet;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(
+      rgba(29, 9, 29, 0.3) 0%,
+      rgba(145, 22, 197, 0.541) 100%
+  );
   color: white;
   border-radius: 8rem;
+  border: solid black;
   margin: 1rem;
   font-weight: bold;
-  padding: 0.5rem;
+  padding: 0.4rem;
 }
 
 .card-header::after {
@@ -91,4 +98,90 @@ li {
 
 #highscores{
   display: none;
+}
+
+#timer.filled {
+  padding: 0.5em;
+}
+
+span#timer {
+  float: right;
+  border-radius: 0.5em;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(38, 31, 31, 0.796);
+  font-size: larger;
+}
+
+input{
+  border: solid black;
+  border-radius: 8rem;
+  border-width: 0.1rem;
+  background-color: rgb(230, 232, 236);
+}
+
+#clear-button{
+  text-shadow: 1px 1px 2px black;
+  padding: 0.2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(
+      rgba(29, 9, 29, 0.3) 0%,
+      rgba(145, 22, 197, 0.541) 100%
+  );
+  color: white;
+  border-radius: 8rem;
+  font-weight: bold;
+}
+
+#startButton{
+  text-shadow: 1px 1px 2px black;
+  padding: 0.2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(
+      rgba(29, 9, 29, 0.3) 0%,
+      rgba(145, 22, 197, 0.541) 100%
+  );
+  color: white;
+  border-radius: 8rem;
+  font-weight: bold;
+}
+
+#highscoresButton{
+  text-shadow: 1px 1px 2px black;
+  padding: 0.2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(
+      rgba(29, 9, 29, 0.3) 0%,
+      rgba(145, 22, 197, 0.541) 100%
+  );
+  color: white;
+  border-radius: 8rem;
+  font-weight: bold;
+  float: left;
+}
+
+#finalButton {
+  text-shadow: 1px 1px 2px black;
+  padding: 0.2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(
+      rgba(29, 9, 29, 0.3) 0%,
+      rgba(145, 22, 197, 0.541) 100%
+  );
+  color: white;
+  border-radius: 8rem;
+  font-weight: bold;
+}
+
+#go-back{
+  text-shadow: 1px 1px 2px black;
+  padding: 0.2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(
+      rgba(29, 9, 29, 0.3) 0%,
+      rgba(145, 22, 197, 0.541) 100%
+  );
+  color: white;
+  border-radius: 8rem;
+  font-weight: bold;
 }

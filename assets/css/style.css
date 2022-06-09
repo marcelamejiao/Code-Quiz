@@ -5,6 +5,7 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* Style general page */
 html,
 body,
 .wrapper {
@@ -43,6 +44,7 @@ header {
   padding: 30px 40px;
 }
 
+/* Style displayed asnwers */
 li {
   text-shadow: 1px 1px 2px black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -58,6 +60,7 @@ li {
   padding: 0.4rem;
 }
 
+/* Style quiz section */
 .card-header::after {
   content: " ";
   display: block;
@@ -88,6 +91,7 @@ li {
   clear: both;
 }
 
+/* Display screens */
 #final-screen{
   display: none;
 }
@@ -100,6 +104,7 @@ li {
   display: none;
 }
 
+/* Style timer */
 #timer.filled {
   padding: 0.5em;
 }
@@ -113,6 +118,7 @@ span#timer {
   font-size: larger;
 }
 
+/* Style initials input */
 input{
   border: solid black;
   border-radius: 8rem;
@@ -120,6 +126,7 @@ input{
   background-color: rgb(230, 232, 236);
 }
 
+/* Style buttons */
 #clear-button{
   text-shadow: 1px 1px 2px black;
   padding: 0.2rem;

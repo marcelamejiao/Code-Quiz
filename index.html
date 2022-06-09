@@ -7,15 +7,36 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
+
   <body>
+    <!-- Top button and timer -->
     <header>
       <button id="highscoresButton">View highscores</button>
       <span id="timer"></span>
     </header>
+
     <main class="wrapper">
+
+      <!-- Title's welcome page -->
       <header>
         <h1>Code Quiz</h1>
       </header>
+
+      <!-- Welcome page -->
+      <section class="card" id="start">
+      <header class="card-header">
+        <h2>Welcome to the Quiz!</h2>
+      </header>
+      <div class="card-body">
+        <p>Try to answer the following code-related questions within the time limit.
+          Keep in mind that incorrect answers will penalize your score/time by 
+          ten seconds!
+        </p>
+        <button id="startButton">Start Quiz</button>
+      </div>
+      </section>
+
+      <!-- Questions and answers -->
       <section class="card" id="quiz">
         <header class="card-header">
           <h2 id="question">Question</h2>
@@ -24,6 +45,8 @@
         </ul>
         <footer class="card-footer"></footer>
       </section>
+
+      <!-- Final screen with submit option -->
       <section class="card" id="final-screen">
         <header class="card-header">
           <h2>All done!</h2>
@@ -34,18 +57,8 @@
           <button id="finalButton">Submit</button>
         </div>
       </section>
-      <section class="card" id="start">
-        <header class="card-header">
-          <h2>Welcome to the Quiz!</h2>
-        </header>
-        <div class="card-body">
-          <p>Try to answer the following code-related questions within the time limit.
-            Keep in mind that incorrect answers will penalize your score/time by 
-            ten seconds!
-          </p>
-          <button id="startButton">Start Quiz</button>
-        </div>
-      </section>
+
+      <!-- High scores screen -->
       <section class="card" id="highscores">
         <header class="card-header">
           <h2>Highscores</h2>
@@ -53,11 +66,13 @@
         <div class="card-body">
           <ol></ol>
         </div>
+        <!-- Bottom highscores buttons -->
         <footer class="card-footer">
           <button id="go-back">Go back</button>
           <button id="clear-button">Clear Highscores</button>
         </footer>
       </section>
+
     </main>
     <script src="./assets/js/script.js"></script>
   </body>

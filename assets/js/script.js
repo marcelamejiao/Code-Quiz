@@ -99,6 +99,11 @@ function renderQuestionsAndAnswers(index)
 // Get the highscores from local storage and convert to JS
 function getHighScores () {
     highScores = JSON.parse(localStorage.getItem("highScores"));
+
+    // If this is the first time the page is loading, start with an empty array
+    if (highScores === null){
+        highScores = [];
+    }
 }
 
 // Get the high scores array and set it in local storage as text

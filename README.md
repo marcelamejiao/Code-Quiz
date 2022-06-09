@@ -12,7 +12,7 @@
 * User can press the button to see the higscores list or press the button to go back to the Welcome page.   
 
 
-💡 See live version here: []()
+💡 See live version here: [https://marcelamejiao.github.io/Code-Quiz/](https://marcelamejiao.github.io/Code-Quiz/)
 
 ### **Preview**
 

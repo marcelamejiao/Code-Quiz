@@ -127,20 +127,7 @@ input{
 }
 
 /* Style buttons */
-#clear-button{
-  text-shadow: 1px 1px 2px black;
-  padding: 0.2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-image: linear-gradient(
-      rgba(29, 9, 29, 0.3) 0%,
-      rgba(145, 22, 197, 0.541) 100%
-  );
-  color: white;
-  border-radius: 8rem;
-  font-weight: bold;
-}
-
-#startButton{
+button {
   text-shadow: 1px 1px 2px black;
   padding: 0.2rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -154,41 +141,5 @@ input{
 }
 
 #highscoresButton{
-  text-shadow: 1px 1px 2px black;
-  padding: 0.2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-image: linear-gradient(
-      rgba(29, 9, 29, 0.3) 0%,
-      rgba(145, 22, 197, 0.541) 100%
-  );
-  color: white;
-  border-radius: 8rem;
-  font-weight: bold;
   float: left;
-}
-
-#finalButton {
-  text-shadow: 1px 1px 2px black;
-  padding: 0.2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-image: linear-gradient(
-      rgba(29, 9, 29, 0.3) 0%,
-      rgba(145, 22, 197, 0.541) 100%
-  );
-  color: white;
-  border-radius: 8rem;
-  font-weight: bold;
-}
-
-#go-back{
-  text-shadow: 1px 1px 2px black;
-  padding: 0.2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-image: linear-gradient(
-      rgba(29, 9, 29, 0.3) 0%,
-      rgba(145, 22, 197, 0.541) 100%
-  );
-  color: white;
-  border-radius: 8rem;
-  font-weight: bold;
 }

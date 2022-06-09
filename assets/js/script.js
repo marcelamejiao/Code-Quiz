@@ -190,6 +190,7 @@ document.querySelector("#startButton").addEventListener("click", function(){
     finalScore = 90;
     renderScore();
 
+    // Start the countdown timer.
     timerInterval = setInterval(function(){
         finalScore--;
 

@@ -60,6 +60,10 @@ li {
   padding: 0.4rem;
 }
 
+li:hover {
+  border-color: #80ffff;
+}
+
 /* Style quiz section */
 .card-header::after {
   content: " ";
@@ -138,6 +142,10 @@ button {
   color: white;
   border-radius: 8rem;
   font-weight: bold;
+}
+
+button:hover {
+  border-color: #80ffff;
 }
 
 #highscoresButton{
